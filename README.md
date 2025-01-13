@@ -15,7 +15,7 @@
 - Randomizes each problem.
 
 ### Project 3: Gilmore Girls Name Generator
-**Summary**: This project lets the user answer this or that questions to determine which Gilmore Girls character they would be.
+**Summary**: This project lets the user answer this or that questions to determine which Gilmore Girls character they are.
 
 **Key Features**: 
 - Lets the user choose between two fun options each round.
