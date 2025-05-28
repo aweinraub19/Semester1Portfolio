@@ -35,3 +35,15 @@
 - Is able to answer a simple problem using any numbers the user chooses.
 - Uses a while loop so the user can continue until they decide to quit.
 
+### Project 6: To Do List
+**Summary**: This program allows the user to create and edit a daily planner to do list.
+**Key Features**: 
+- Allows the user to remove list items after they are completed.
+- Includes an error message so the user knows when they are using the program incorrectly.
+
+### Project 7: Simple Calculator
+**Summary**: This program calculates simple operations (addition, subtraction, multiplication, and division).
+
+**Key Features**: 
+- Is able to answer a simple problem using any numbers the user chooses.
+- Uses a while loop so the user can continue until they decide to quit.
