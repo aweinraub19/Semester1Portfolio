@@ -41,9 +41,9 @@
 - Allows the user to remove list items after they are completed.
 - Includes an error message so the user knows when they are using the program incorrectly.
 
-### Project 7: Simple Calculator
-**Summary**: This program calculates simple operations (addition, subtraction, multiplication, and division).
+### Project 7: Random Image Recommender
+**Summary**: This program provides the user with ideas for their next breakfast.
 
 **Key Features**: 
-- Is able to answer a simple problem using any numbers the user chooses.
-- Uses a while loop so the user can continue until they decide to quit.
+- Displays a picture and description of each breakfast recommended.
+- Allows the user to continue generating ideas until they choose to stop.
