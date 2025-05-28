@@ -1,0 +1,42 @@
+#Random Image Recommender
+#2/21/25
+
+#init
+from PIL import Image
+import requests
+from io import BytesIO
+import random
+import time
+breakfast = ["https://simple-veganista.com/wp-content/uploads/2016/04/homemade-acai-bowl-5.jpg", #An acai bowl. Image source: The Simple Veganista. Accessed via https://simple-veganista.com/super-berry-acai-bowl/
+"https://eatsbythebeach.com/wp-content/uploads/2022/02/Easy-California-Lox-Bagel-Sandwich-1-Eats-By-The-Beach.jpeg", #A bagel sandwich. Image source: Eats By the Beach. Accessed via https://eatsbythebeach.com/easy-california-lox-bagel-sandwich/
+"https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/TQMBRBUBWYI6XPRCGLJTDWDVGA.jpg&w=1200", #Eggs and hashbrowns. Image source: The Washington Post. 2021. Accessed via https://www.washingtonpost.com/food/2021/03/19/crispy-shredded-hash-browns-recipe/
+"https://tse4.mm.bing.net/th/id/OIP.Bt_DtN9UggQ_LOs4IgMApAHaLH?rs=1&pid=ImgDetMain", #Breakfast tacos. Image source: Food with Feeling. Accessed via http://bbritnell.com/breakfast-tacos/
+"https://iwashyoudry.com/wp-content/uploads/2016/08/Classic-Waffles-5-675x952.jpg"] #Waffles. Image source: I Wash You Dry. 2023. Accessed via https://iwashyoudry.com/classic-waffle-recipe/
+#func
+def open_image(url):
+    response = requests.get(url)
+    img = Image.open(BytesIO(response.content))
+    img.show()
+
+def recommender():
+    while True:
+        start = input("Would you like a reccomendation for your next breakfast? (Y or N)")
+        if start == "Y" or start == "y":
+            url = random.choice(breakfast)
+            open_image(url)
+            time.sleep(1)
+            if url == "https://simple-veganista.com/wp-content/uploads/2016/04/homemade-acai-bowl-5.jpg":
+                print("This is an acai bowl. It is a healthy and filling breakfast and you can top it with whatever you choose. \nI would reccomend some sort of nut butter and fresh fruit and granola!")
+            if url == "https://eatsbythebeach.com/wp-content/uploads/2022/02/Easy-California-Lox-Bagel-Sandwich-1-Eats-By-The-Beach.jpeg":
+                print("This is a bagel sandwich! Cream cheese and lox are amazing toppings for this, but you can add whatever you want! \nYou can also use your favorite type of bagel. Mine is pumpernickel!")
+            if url == "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/TQMBRBUBWYI6XPRCGLJTDWDVGA.jpg&w=1200":
+                print("These are hashbrowns and eggs. You can have the eggs in anyway that you choose! \nYou can also add different sides like bacon, sausage, or fruit!")
+            if url == "https://tse4.mm.bing.net/th/id/OIP.Bt_DtN9UggQ_LOs4IgMApAHaLH?rs=1&pid=ImgDetMain":
+                print("These are breakfast tacos. Fill them with eggs and any other taco toppings of your choice! \nI love having avocados and a crema sauce in them!")
+            if url == "https://iwashyoudry.com/wp-content/uploads/2016/08/Classic-Waffles-5-675x952.jpg":
+                print("This is a belgian waffle! It tastes amazing with your favorite fruit and powdered sugar or syrup! \nA more savory way to eat this is with fried chicken! Yum!")
+        if start == "N" or start == "n":
+            print("Come back next time!")
+            break
+#main
+recommender()
